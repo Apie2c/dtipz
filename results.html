@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results | ElitePicks GH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="logo">ELITE<span>PICKS</span> <span class="logo-gh">GH</span></a>
+            <div class="nav-links">
+                <a href="index.html#picks">Picks</a>
+                <a href="results.html" style="color:var(--green)">Results</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-ghost">Login</a>
+                <a href="index.html#pricing" class="btn btn-primary">Join VIP</a>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html#picks">Free Picks</a>
+            <a href="results.html">Results</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="login.html" class="btn btn-ghost">Login</a>
+            <a href="index.html#pricing" class="btn btn-primary">Join VIP</a>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 48px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Transparency</span>
+                <h2 class="section-title">Our Track Record</h2>
+                <p class="section-sub">Every prediction we've ever made. No hiding losses.</p>
+            </div>
+
+            <!-- STAT SUMMARY -->
+            <div class="steps-grid" style="margin-bottom: 48px;">
+                <div class="step" style="text-align:center">
+                    <div class="stat-num" style="font-size:3rem; color:var(--green)">84%</div>
+                    <div class="stat-label">Overall Win Rate</div>
+                </div>
+                <div class="step" style="text-align:center">
+                    <div class="stat-num" style="font-size:3rem; color:var(--green)">182</div>
+                    <div class="stat-label">Total Wins (30 days)</div>
+                </div>
+                <div class="step" style="text-align:center">
+                    <div class="stat-num" style="font-size:3rem; color:var(--green)">35</div>
+                    <div class="stat-label">Total Losses (30 days)</div>
+                </div>
+            </div>
+
+            <!-- RESULTS TABLE -->
+            <div class="results-table-wrap" style="background:var(--bg-3); border:1px solid var(--border); border-radius:var(--radius-lg); overflow:hidden;">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Match</th>
+                            <th>League</th>
+                            <th>Prediction</th>
+                            <th>Odds</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                        <!-- Rendered by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>⚠️ Must be 18+. Betting involves risk. Gamble responsibly.</p>
+            <p>&copy; 2026 ElitePicks Ghana. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const results = [
+            { date: 'Mar 12', match: 'Arsenal vs Chelsea', league: 'Premier League', prediction: 'Home Win', odds: '1.75', result: 'win' },
+            { date: 'Mar 12', match: 'PSG vs Lyon', league: 'Ligue 1', prediction: 'Over 2.5', odds: '1.80', result: 'win' },
+            { date: 'Mar 12', match: 'Juventus vs Napoli', league: 'Serie A', prediction: 'BTTS', odds: '1.70', result: 'loss' },
+            { date: 'Mar 11', match: 'Barcelona vs Real Madrid', league: 'La Liga', prediction: 'Draw', odds: '3.20', result: 'win' },
+            { date: 'Mar 11', match: 'Bayern vs Dortmund', league: 'Bundesliga', prediction: 'Home Win', odds: '1.55', result: 'win' },
+            { date: 'Mar 11', match: 'Liverpool vs Man Utd', league: 'Premier League', prediction: 'Home Win', odds: '1.65', result: 'win' },
+            { date: 'Mar 10', match: 'Ajax vs PSV', league: 'Eredivisie', prediction: 'BTTS', odds: '1.75', result: 'win' },
+            { date: 'Mar 10', match: 'Inter vs AC Milan', league: 'Serie A', prediction: 'Over 2.5', odds: '1.90', result: 'loss' },
+            { date: 'Mar 10', match: 'Real Madrid vs Atletico', league: 'La Liga', prediction: 'Home Win', odds: '1.85', result: 'win' },
+            { date: 'Mar 09', match: 'Tottenham vs Wolves', league: 'Premier League', prediction: 'Home Win', odds: '1.60', result: 'win' },
+            { date: 'Mar 09', match: 'Marseille vs Nice', league: 'Ligue 1', prediction: 'Home Win', odds: '1.75', result: 'pending' },
+            { date: 'Mar 09', match: 'Porto vs Benfica', league: 'Primeira Liga', prediction: 'Under 2.5', odds: '1.85', result: 'win' },
+        ];
+
+        const tbody = document.getElementById('resultsBody');
+        tbody.innerHTML = results.map(r => `
+            <tr>
+                <td style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted)">${r.date}</td>
+                <td style="font-weight:600">${r.match}</td>
+                <td style="font-size:12px;color:var(--text-muted)">${r.league}</td>
+                <td style="font-family:var(--font-mono);font-size:13px">${r.prediction}</td>
+                <td style="font-family:var(--font-mono);font-size:13px;color:var(--green)">${r.odds}</td>
+                <td>
+                    ${r.result === 'win'
+                        ? '<span class="badge-win">✅ WIN</span>'
+                        : r.result === 'loss'
+                        ? '<span class="badge-loss">❌ LOSS</span>'
+                        : '<span class="badge-pending">⏳ PENDING</span>'}
+                </td>
+            </tr>
+        `).join('');
+
+        // Mobile menu
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

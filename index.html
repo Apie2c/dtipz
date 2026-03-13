@@ -3,359 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ElitePicks GH | Ghana's Top Football Predictions</title>
-    <meta name="description" content="Ghana's #1 sports prediction platform. Expert daily picks, VIP slips, 84% win rate. Pay via MTN MoMo or crypto.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <title>Apie2c Predictions | Daily Sports Tips</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="bg-gray-900 text-white font-sans">
 
-<!-- NAV -->
-<nav class="nav" id="navbar">
-    <div class="nav-inner">
-        <a href="index.html" class="logo">ElitePicks <span class="logo-mark">GH</span></a>
-        <div class="nav-links">
-            <a href="#picks" class="active">Picks</a>
-            <a href="results.html">Results</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#contact">Contact</a>
+    <header class="p-6 border-b border-gray-800 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-yellow-500">APIE2C TIPS</h1>
+        <div id="auth-buttons">
+            <button onclick="login()" class="bg-yellow-500 text-black px-4 py-2 rounded font-bold">Login / Sign Up</button>
         </div>
-        <div class="nav-actions">
-            <a href="login.html" class="btn btn-ghost">Login</a>
-            <a href="#pricing" class="btn btn-lime">Join VIP</a>
-        </div>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#picks">Free Picks</a>
-        <a href="results.html">Results</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-        <a href="login.html" class="btn btn-ghost">Login</a>
-        <a href="#pricing" class="btn btn-lime">Join VIP</a>
-    </div>
-</nav>
+    </header>
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-    <div class="ticker" id="ticker">
-        <div class="ticker-item"><span class="ticker-sep"></span>Arsenal 2–1 Chelsea &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>Man City Over 2.5 &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>PSG Home Win &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>Dortmund Draw &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>Liverpool BTTS &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>Barcelona Win &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>Real Madrid Win &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>Arsenal 2–1 Chelsea &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>Man City Over 2.5 &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>PSG Home Win &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>Dortmund Draw &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>Liverpool BTTS &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>Barcelona Win &nbsp;WIN</div>
-        <div class="ticker-item"><span class="ticker-sep"></span>Real Madrid Win &nbsp;WIN</div>
-    </div>
-</div>
+    <section class="py-10 px-6 text-center">
+        <h2 class="text-3xl font-bold mb-8">Go Premium for Max Odds</h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+                <h3 class="text-xl font-bold">Weekly</h3>
+                <p class="text-3xl font-bold my-4">50 GHS</p>
+                <button onclick="pay('weekly')" class="w-full bg-yellow-500 text-black py-2 rounded font-bold">Join Now</button>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg border-2 border-yellow-500 scale-105">
+                <h3 class="text-xl font-bold">Monthly</h3>
+                <p class="text-3xl font-bold my-4">150 GHS</p>
+                <button onclick="pay('monthly')" class="w-full bg-yellow-500 text-black py-2 rounded font-bold">Most Popular</button>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+                <h3 class="text-xl font-bold">Yearly</h3>
+                <p class="text-3xl font-bold my-4">1,200 GHS</p>
+                <button onclick="pay('yearly')" class="w-full bg-yellow-500 text-black py-2 rounded font-bold">Save Big</button>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<header class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-content">
-        <div class="hero-tag">
-            <span class="live-dot"></span>
-            Live accuracy — 84% win rate
-        </div>
-        <h1 class="hero-title">Ghana's<br><em>Most Trusted</em><br>Picks</h1>
-        <p class="hero-sub">Expert-researched football predictions delivered to your WhatsApp every morning. No guesswork.</p>
-        <div class="hero-stats">
-            <div class="stat">
-                <div class="stat-num">5K+</div>
-                <div class="stat-label">Members</div>
+    <main class="max-w-4xl mx-auto p-6">
+        <h2 class="text-2xl font-bold mb-4">Today's Predictions</h2>
+        
+        <div class="bg-gray-800 p-4 rounded-lg mb-4 flex justify-between items-center">
+            <div>
+                <p class="text-sm text-gray-400">EPL - 15:00</p>
+                <p class="font-bold">Arsenal vs Man City</p>
             </div>
-            <div class="stat">
-                <div class="stat-num">84%</div>
-                <div class="stat-label">Win Rate</div>
+            <div class="text-right">
+                <p class="text-yellow-500 font-bold">Over 2.5 Goals</p>
+                <span class="text-xs bg-green-600 px-2 py-1 rounded">FREE</span>
             </div>
-            <div class="stat">
-                <div class="stat-num">3+</div>
-                <div class="stat-label">Daily Slips</div>
-            </div>
-        </div>
-        <div class="hero-ctas">
-            <a href="#picks" class="btn btn-lime btn-lg">View Today's Picks</a>
-            <a href="#pricing" class="btn btn-outline btn-lg">See VIP Plans</a>
-        </div>
-    </div>
-    <div class="hero-scroll"><div class="hero-scroll-line"></div></div>
-</header>
-
-<!-- FREE PICKS -->
-<section class="section" id="picks">
-    <div class="container">
-        <div class="section-header">
-            <div class="sh-label">Free Daily</div>
-            <h2 class="sh-title">Today's Picks</h2>
-            <p class="sh-sub">Updated 8:30 AM daily. VIP members get 3 extra high-value picks.</p>
-        </div>
-        <div class="picks-grid" id="picksGrid"></div>
-        <div class="vip-teaser">
-            <div class="vip-icon">🏆</div>
-            <h3>3 VIP Picks Locked Today</h3>
-            <p>High-value accumulators at 2.50+ odds, correct score alerts, and weekend specials — all in one WhatsApp group.</p>
-            <a href="#pricing" class="btn btn-gold btn-lg">Unlock VIP Access</a>
-        </div>
-    </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="section section-alt">
-    <div class="container">
-        <div class="section-header center">
-            <div class="sh-label">Simple Process</div>
-            <h2 class="sh-title">How It Works</h2>
-        </div>
-        <div class="steps-grid">
-            <div class="step">
-                <div class="step-num">01 — Subscribe</div>
-                <div class="step-icon"><i class="fas fa-crown"></i></div>
-                <h3>Pick a Plan</h3>
-                <p>Choose weekly, monthly, or yearly. Pay instantly with MTN MoMo or send crypto — no bank needed.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">02 — Get Added</div>
-                <div class="step-icon"><i class="fab fa-whatsapp"></i></div>
-                <h3>Join the Group</h3>
-                <p>Send us your payment proof on WhatsApp. You're added to the private VIP group within 1 hour.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">03 — Win Daily</div>
-                <div class="step-icon"><i class="fas fa-chart-line"></i></div>
-                <h3>Cash Out</h3>
-                <p>Wake up to a researched slip every morning. Place your bets. Track wins in the group.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section">
-    <div class="container">
-        <div class="section-header">
-            <div class="sh-label">Social Proof</div>
-            <h2 class="sh-title">What Members Say</h2>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial">
-                <div class="t-stars">★★★★★</div>
-                <p>"Made back my subscription fee in the first week. Genuinely the best service in Ghana."</p>
-                <div class="t-author">
-                    <div class="t-avatar">KA</div>
-                    <div><strong>Kofi Asante</strong><span>Accra</span></div>
-                </div>
-            </div>
-            <div class="testimonial t-feat">
-                <div class="t-stars">★★★★★</div>
-                <p>"The WhatsApp group explains every pick with reasoning. You actually learn why you're betting — not just copying blindly."</p>
-                <div class="t-author">
-                    <div class="t-avatar">AB</div>
-                    <div><strong>Ama Boateng</strong><span>Kumasi</span></div>
-                </div>
-            </div>
-            <div class="testimonial">
-                <div class="t-stars">★★★★★</div>
-                <p>"Been on monthly for 3 months. Consistent. The yearly plan is my next move — worth every pesewa."</p>
-                <div class="t-author">
-                    <div class="t-avatar">QM</div>
-                    <div><strong>Quame Mensah</strong><span>Takoradi</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PRICING -->
-<section class="section section-alt" id="pricing">
-    <div class="container">
-        <div class="section-header center">
-            <div class="sh-label">Plans</div>
-            <h2 class="sh-title">Choose Your Plan</h2>
-            <p class="sh-sub">Pay with MTN MoMo or crypto. Activated within 1 hour.</p>
-        </div>
-        <div class="pricing-wrap">
-            <div class="price-card">
-                <div class="price-plan">Weekly</div>
-                <div class="price-amount">GH₵ 50</div>
-                <div class="price-period">7 days access</div>
-                <ul class="price-features">
-                    <li class="on"><i class="fas fa-check fi-check"></i>7 Days VIP Access</li>
-                    <li class="on"><i class="fas fa-check fi-check"></i>Daily 2+ Odds Slip</li>
-                    <li class="on"><i class="fas fa-check fi-check"></i>WhatsApp Group</li>
-                    <li><i class="fas fa-times fi-cross"></i>Weekend Long-shots</li>
-                    <li><i class="fas fa-times fi-cross"></i>Personal Consultation</li>
-                </ul>
-                <button class="btn btn-outline btn-block" onclick="openPayment('weekly','GH₵ 50')">Subscribe</button>
-            </div>
-            <div class="price-card price-feat">
-                <div class="price-badge">Best Value</div>
-                <div class="price-plan">Monthly</div>
-                <div class="price-amount">GH₵ 150</div>
-                <div class="price-period">30 days access</div>
-                <ul class="price-features">
-                    <li class="on"><i class="fas fa-check fi-check"></i>30 Days VIP Access</li>
-                    <li class="on"><i class="fas fa-check fi-check"></i>Daily 2+ Odds Slip</li>
-                    <li class="on"><i class="fas fa-check fi-check"></i>WhatsApp Group</li>
-                    <li class="on"><i class="fas fa-check fi-check"></i>Weekend Long-shots</li>
-                    <li><i class="fas fa-times fi-cross"></i>Personal Consultation</li>
-                </ul>
-                <button class="btn btn-lime btn-block" onclick="openPayment('monthly','GH₵ 150')">Get Started</button>
-            </div>
-            <div class="price-card">
-                <div class="price-plan">Yearly</div>
-                <div class="price-amount">GH₵ 900</div>
-                <div class="price-period">365 days access</div>
-                <ul class="price-features">
-                    <li class="on"><i class="fas fa-check fi-check"></i>365 Days VIP Access</li>
-                    <li class="on"><i class="fas fa-check fi-check"></i>Daily 2+ Odds Slip</li>
-                    <li class="on"><i class="fas fa-check fi-check"></i>WhatsApp Group</li>
-                    <li class="on"><i class="fas fa-check fi-check"></i>Weekend Long-shots</li>
-                    <li class="on"><i class="fas fa-check fi-check"></i>Personal Consultation</li>
-                </ul>
-                <button class="btn btn-outline btn-block" onclick="openPayment('yearly','GH₵ 900')">Subscribe</button>
-            </div>
-        </div>
-        <div class="pay-methods">
-            <span>Accepted Payments</span>
-            <div class="pay-chip"><img src="images/mtn-momo.svg" alt="MTN">MTN MoMo</div>
-            <div class="pay-chip"><img src="images/bitcoin.svg" alt="BTC">Bitcoin</div>
-            <div class="pay-chip"><img src="images/usdt.svg" alt="USDT">USDT</div>
-            <div class="pay-chip"><img src="images/ethereum.svg" alt="ETH">Ethereum</div>
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="contact">
-    <div class="container-sm">
-        <div class="section-header center">
-            <div class="sh-label">Support</div>
-            <h2 class="sh-title">Get In Touch</h2>
-            <p class="sh-sub">Questions? We reply within the hour.</p>
-        </div>
-        <div class="contact-grid">
-            <a href="https://wa.me/233XXXXXXXXX" target="_blank" class="contact-card">
-                <div class="c-icon"><i class="fab fa-whatsapp"></i></div>
-                <div class="c-info"><strong>WhatsApp Us</strong><span>+233 XX XXX XXXX</span></div>
-                <i class="fas fa-arrow-right c-arrow"></i>
-            </a>
-            <a href="https://t.me/ElitePicksGH" target="_blank" class="contact-card">
-                <div class="c-icon"><i class="fab fa-telegram"></i></div>
-                <div class="c-info"><strong>Telegram Channel</strong><span>@ElitePicksGH</span></div>
-                <i class="fas fa-arrow-right c-arrow"></i>
-            </a>
-            <a href="mailto:support@elitepicksgh.com" class="contact-card">
-                <div class="c-icon"><i class="fas fa-envelope"></i></div>
-                <div class="c-info"><strong>Email Support</strong><span>support@elitepicksgh.com</span></div>
-                <i class="fas fa-arrow-right c-arrow"></i>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-inner">
-        <div class="footer-top">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">ElitePicks <span class="logo-mark">GH</span></a>
-                <p>Ghana's most trusted football prediction platform. Expert picks delivered daily to your WhatsApp.</p>
-                <div class="social-row">
-                    <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="social-btn" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-                    <a href="#" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-nav">
-                <div class="footer-col">
-                    <h4>Platform</h4>
-                    <a href="#picks">Free Picks</a>
-                    <a href="results.html">Results</a>
-                    <a href="#pricing">VIP Plans</a>
-                    <a href="login.html">Login</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <a href="terms.html">Terms of Use</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="responsible-gambling.html">Responsible Gambling</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>⚠ Must be 18+. Gambling involves risk. Gamble responsibly.</p>
-            <p>© 2026 ElitePicks Ghana. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-
-<!-- PAYMENT MODAL -->
-<div class="modal-overlay" id="paymentModal">
-    <div class="modal">
-        <button class="modal-close" onclick="closePayment()"><i class="fas fa-times"></i></button>
-        <div class="modal-title">Complete Payment</div>
-        <div class="modal-sub" id="modalSub">Weekly Plan — GH₵ 50</div>
-        <div class="pay-tabs">
-            <button class="pay-tab active" onclick="switchTab('momo')"><i class="fas fa-mobile-alt"></i> MTN MoMo</button>
-            <button class="pay-tab" onclick="switchTab('crypto')"><i class="fab fa-bitcoin"></i> Crypto</button>
         </div>
 
-        <!-- MOMO -->
-        <div class="tab-content active" id="tab-momo">
-            <div class="momo-steps">
-                <div class="momo-step"><div class="step-badge">1</div><p>Dial <strong>*170#</strong> on your MTN line</p></div>
-                <div class="momo-step"><div class="step-badge">2</div><p>Select <strong>Transfer Money → MoMo User</strong></p></div>
-                <div class="momo-step"><div class="step-badge">3</div><p>Send to: <span class="hi" id="momoNumber">055 XXX XXXX</span></p></div>
-                <div class="momo-step"><div class="step-badge">4</div><p>Use reference: <span class="hi" id="momoRef">EP-WEEKLY</span></p></div>
-                <div class="momo-step"><div class="step-badge">5</div><p>Fill the form below to confirm — activated within 1 hour.</p></div>
+        <div class="relative bg-gray-800 p-4 rounded-lg overflow-hidden">
+            <div class="blur-md select-none">
+                <p class="text-sm">Bundesliga - 17:30</p>
+                <p class="font-bold">Real Madrid vs Barcelona</p>
+                <p class="text-yellow-500 font-bold">Home Win & Over 1.5</p>
             </div>
-            <div class="form-field"><input type="text" placeholder="Your Full Name" id="momoName" class="form-input"></div>
-            <div class="form-field"><input type="tel" placeholder="Your Phone Number" id="momoPhone" class="form-input"></div>
-            <div class="form-field"><input type="text" placeholder="MoMo Transaction ID" id="momoTxn" class="form-input"></div>
-            <button class="btn btn-lime btn-block" style="margin-top:8px" onclick="submitMomo()">
-                <i class="fab fa-whatsapp"></i> Confirm via WhatsApp
-            </button>
+            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60">
+                <i class="fas fa-lock text-2xl mb-2"></i>
+                <p class="font-bold text-sm">VIP ONLY</p>
+                <button onclick="pay('monthly')" class="mt-2 text-xs text-yellow-500 underline">Unlock now</button>
+            </div>
         </div>
+    </main>
 
-        <!-- CRYPTO -->
-        <div class="tab-content" id="tab-crypto">
-            <div class="crypto-coins">
-                <button class="coin-btn active" onclick="selectCrypto(event,'BTC')"><img src="images/bitcoin.svg" alt="" style="height:14px"> BTC</button>
-                <button class="coin-btn" onclick="selectCrypto(event,'USDT')"><img src="images/usdt.svg" alt="" style="height:14px"> USDT</button>
-                <button class="coin-btn" onclick="selectCrypto(event,'ETH')"><img src="images/ethereum.svg" alt="" style="height:14px"> ETH</button>
-            </div>
-            <div class="crypto-box">
-                <div class="qr-wrap"><div class="qr-mock">QR</div></div>
-                <div class="addr-label">Send <span id="cryptoCoin">BTC</span> to this address</div>
-                <div class="addr-val" id="cryptoAddress">bc1q...your-btc-address-here</div>
-                <button class="copy-btn" onclick="copyAddress()"><i class="fas fa-copy"></i> Copy Address</button>
-            </div>
-            <div class="crypto-hint">⚡ After sending, fill the form below with your transaction hash. We verify on-chain and activate within 1 hour.</div>
-            <div class="form-field"><input type="text" placeholder="Your Full Name" id="cryptoName" class="form-input"></div>
-            <div class="form-field"><input type="tel" placeholder="Your WhatsApp Number" id="cryptoPhone" class="form-input"></div>
-            <div class="form-field"><input type="text" placeholder="Transaction Hash / TXID" id="cryptoTxn" class="form-input"></div>
-            <button class="btn btn-lime btn-block" style="margin-top:8px" onclick="submitCrypto()">
-                <i class="fab fa-whatsapp"></i> Confirm via WhatsApp
-            </button>
-        </div>
-    </div>
-</div>
-
-<script src="js/main.js"></script>
-<script src="js/payment.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
